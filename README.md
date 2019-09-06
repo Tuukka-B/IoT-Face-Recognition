@@ -8,4 +8,6 @@
     * Kasvojentunnistus, SMS-kuluvalvonta
 * Extravaiheet
     * Smart home   
-    * Komponentit: wlan-kytkymiä
+    * Komponentit: wlan-kytkimiä
+    * kaksivaiheinen tunnistautuminen / sms
+    * kuva ja lupa sovelluksen avulla
