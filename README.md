@@ -1,6 +1,7 @@
 # IoT Face Recognition
 
 ## Ominaisuudet
+* Yleinen selostus
 * Koodi
 * Komponentit
 * Vaiheet
