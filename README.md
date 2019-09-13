@@ -9,7 +9,7 @@
 ## Sisällysluettelo 
 
 * [Vaatimusmäärittely](#vaatimusmäärittely)
-    * [Järjestelmän yleiskuvaus](#yleiskuvaus)
+    * [Järjestelmän yleiskuvaus](#järjestelmän-yleiskuvaus)
     * [Kohdeyleisö](#kohdeyleisö)
     * [Käyttöympäristö ja käytetyt teknologiat](#käyttöympäristö-ja-käytetyt-teknologiat)
     * [Käyttäjäroolit](#käyttäjäroolit)
