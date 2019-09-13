@@ -12,6 +12,7 @@
     * [Järjestelmän yleiskuvaus](#järjestelmän-yleiskuvaus)
     * [Kohdeyleisö](#kohdeyleisö)
     * [Käyttöympäristö ja käytetyt teknologiat](#käyttöympäristö-ja-käytetyt-teknologiat)
+    * [Komponentit](#komponentit)
     * [Käyttäjäroolit](#käyttäjäroolit)
     * [Ominaisuudet](#ominaisuudet)
     * [Käyttötapaukset](#käyttötapaukset)
@@ -42,6 +43,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor imperdiet 
 ## Kohdeyleisö
 
 ## Käyttöympäristö ja käytetyt teknologiat
+
+## Komponentit
+
+* Raspberry Pi 3 Model B
+* Raspberry Pi Camera Module
+* Seeed Grove - Relay
+* Seeed LTE Cat 1 Pi HAT (Europe)
+* Raspberry Pi IPS LCD Display
 
 ## Käyttäjäroolit
 
