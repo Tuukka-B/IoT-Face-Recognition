@@ -50,10 +50,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor imperdiet 
 
 * Raspberry Pi 3 Model B
 * Raspberry Pi Camera Module
-* Seeed Grove - Relay
-* Seeed LTE Cat 1 Pi HAT (Europe)
-* Raspberry Pi IPS LCD Display
-* Smart Power Outlet
+* Grove - Relay
+* ESP32
 
 ## Käyttäjäroolit
 
