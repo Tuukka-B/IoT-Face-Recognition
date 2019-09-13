@@ -55,7 +55,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor imperdiet 
 
 ## Työnjako
 
-## Työaikasuunnitelma
+## Työaikasuunnitelma  
 
 # Loppuraportti
 
