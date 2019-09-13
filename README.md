@@ -46,6 +46,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor imperdiet 
 
 ## Komponentit
 
+<img src="files/blueprint.jpg" alt="Face recognition tech">
+
 * Raspberry Pi 3 Model B
 * Raspberry Pi Camera Module
 * Seeed Grove - Relay
