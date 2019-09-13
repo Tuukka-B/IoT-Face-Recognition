@@ -30,7 +30,6 @@
     * [Työmäärä](#työmäärä)
     * [Yhteenveto](#yhteenveto)
 
-# IoT Face Recognition
 
 # Vaatimusmäärittely
 
