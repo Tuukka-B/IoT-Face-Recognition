@@ -51,6 +51,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor imperdiet 
 * Seeed Grove - Relay
 * Seeed LTE Cat 1 Pi HAT (Europe)
 * Raspberry Pi IPS LCD Display
+* Smart Power Outlet
 
 ## Käyttäjäroolit
 
