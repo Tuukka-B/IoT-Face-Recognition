@@ -2,8 +2,8 @@
 
 ## Tekijät
 
-* Samson Azizyan (M3156), Arttu (M3350), Tuukka Bordi (M2296), Jaber Askari (M2947)
-* Versionumero 0.1
+* Samson Azizyan (M3156), Arttu Häyrynen (M3350), Tuukka Bordi (M2296), Jaber Askari (M2947)
+* Versionumero 0.2
 
 
 ## Sisällysluettelo 
@@ -36,7 +36,9 @@
 
 ## Järjestelmän yleiskuvaus
 
-[SEEED](https://project.seeedstudio.com/SeeedStudio/face-recognization-smart-lock-with-lte-pi-hat-abcec9)
+[Linkki projekti-ideaan](https://project.seeedstudio.com/SeeedStudio/face-recognization-smart-lock-with-lte-pi-hat-abcec9)
+
+Suunnitelemamme järjestelmä on Raspberry Pi:n pohjalle kameramoduulin avulla toteutettu kasvojentunnistusjärjestelmä. Tähän järjestelmään on liitettynä ESP32 -moduuli, jonka avulla saamme lisättyä järjestelmään langattomia toiminnallisuuksia. Projekti voi laajentua ja tominnalisuudet lisääntyä, jos näyttää siltä, että tähän on aikaa.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor imperdiet condimentum. Nunc hendrerit ante risus, id semper velit rhoncus vel. Phasellus diam sem, mollis sed euismod eu, sodales nec tellus. Proin at lacus non mauris vulputate interdum at a justo. Donec auctor tincidunt sapien, a mattis sem euismod a. Vivamus sit amet leo vestibulum, facilisis magna nec, malesuada justo. Phasellus efficitur est et eros rutrum, sit amet viverra eros auctor. Suspendisse sodales, ligula vitae facilisis consectetur, neque eros dapibus urna, ac luctus sapien augue et orci. Phasellus ut elit sed urna consectetur cursus at a sapien. Nulla luctus purus mi, sed tempus elit aliquam non.
 
@@ -44,13 +46,45 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor imperdiet 
 
 ## Käyttöympäristö ja käytetyt teknologiat
 
+Projekti vaatii seuraavat Linux-kirjastot: 
+* build-essential
+* cmake 
+* gfortran 
+* git 
+* wget 
+* curl 
+* graphicsmagick 
+* libgraphicsmagick1-dev 
+* libatlas-dev 
+* libavcodec-dev 
+* libavformat-dev 
+* libboost-all-dev 
+* libgtk2.0-dev 
+* libjpeg-dev 
+* liblapack-dev 
+* libswscale-dev 
+* pkg-config 
+* python3-dev 
+* python3-numpy 
+
+Python-komponenteista tarvitsemme nämä:
+
+* https://github.com/ageitgey/face_recognition.git - python-kirjasto, jota käytämme kasvojen tunnistamiseen
+* GPIO -kirjasto, jota käytetään GPIO-pinnien ohjaukseen
+* picamera -kirjasto kameran ohjaukseen
+* PIL / Image -kirjastoa kuvan esittämiseen näytöllä tunnistautumisen yhteydessä
+
+Muita valinnaisia kirjastoja, joista saattaa olla hyötyä: time, os, numpy, matplotlib.pyplot
+
+Lisäksi käytämme tunnettuja Python-kirjastoja ESP32:n ohjaukseen
+
 ## Komponentit
 
 <img src="files/blueprint.jpg" alt="Face recognition tech">
 
 * Raspberry Pi 3 Model B
 * Raspberry Pi Camera Module
-* Grove - Relay
+* [Grove - Relay](https://project.seeedstudio.com/products/grove-relay)
 * ESP32
 
 ## Käyttäjäroolit
