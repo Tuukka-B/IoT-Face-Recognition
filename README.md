@@ -40,7 +40,6 @@
 
 Suunnitelemamme järjestelmä on Raspberry Pi:n pohjalle kameramoduulin avulla toteutettu kasvojentunnistusjärjestelmä. Tähän järjestelmään on liitettynä ESP32 -moduuli, jonka avulla saamme lisättyä järjestelmään langattomia toiminnallisuuksia. Projekti voi laajentua ja tominnalisuudet lisääntyä, jos näyttää siltä, että tähän on aikaa.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor imperdiet condimentum. Nunc hendrerit ante risus, id semper velit rhoncus vel. Phasellus diam sem, mollis sed euismod eu, sodales nec tellus. Proin at lacus non mauris vulputate interdum at a justo. Donec auctor tincidunt sapien, a mattis sem euismod a. Vivamus sit amet leo vestibulum, facilisis magna nec, malesuada justo. Phasellus efficitur est et eros rutrum, sit amet viverra eros auctor. Suspendisse sodales, ligula vitae facilisis consectetur, neque eros dapibus urna, ac luctus sapien augue et orci. Phasellus ut elit sed urna consectetur cursus at a sapien. Nulla luctus purus mi, sed tempus elit aliquam non.
 
 ## Kohdeyleisö
 
