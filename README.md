@@ -75,7 +75,7 @@ Python-komponenteista tarvitsemme nämä:
 
 Muita valinnaisia kirjastoja, joista saattaa olla hyötyä: time, os, numpy, matplotlib.pyplot
 
-Lisäksi käytämme tunnettuja Python-kirjastoja ESP32:n ohjaukseen
+Lisäksi käytämme tunnettuja Linux / Python-kirjastoja ESP32:n ohjaukseen
 
 ## Komponentit
 
