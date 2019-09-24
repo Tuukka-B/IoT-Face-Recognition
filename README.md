@@ -129,3 +129,10 @@ Lisäksi käytämme tunnettuja Linux / Python-kirjastoja ESP32:n ohjaukseen
     * Komponentit: wlan-kytkimiä
     * kaksivaiheinen tunnistautuminen / sms
     * kuva ja lupa sovelluksen avulla
+
+Hyödyllinen dokumentaatio (kannattaa tutustua):
+* [Kasvojentunnistus-kirjasto](https://github.com/ageitgey/face_recognition/blob/master/README.md)
+* [Remote shell Micropythonille (ESP32):](https://github.com/dhylands/rshell)
+* [Verkkosivupohjainen remote shell Micropythonille (ESP32):](https://github.com/Hermann-SW/webrepl#webrepl-shell)
+* [Kätevät käyttöohjeet webrepl-shellille](https://forum.micropython.org/viewtopic.php?f=2&p=30829#p30829)
+* [Toinen käyttöohje webreplille](https://docs.micropython.org/en/latest/esp8266/tutorial/repl.html)
