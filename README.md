@@ -100,6 +100,32 @@ Lisäksi käytämme tunnettuja Linux / Python-kirjastoja ESP32:n ohjaukseen
 
 ## Työnjako
 
+
+* Kasvojentunnistuskirjasto Raspberry Pi:lle
+** kameran ohjaus Pythonilla
+* ESP32 → yhteys Raspberryyn
+** ESP32-fläshäys ja käyttöönotto
+* ESP32 lediohjaus-ohjelman koodaus
+• Dokumentointi
+** Vaatimusmäärittely
+* Sensoreiden ja toimilaitteiden toiminta–
+* Kuvaus verkoista, siirtoteistä ja – tekniikoista
+* Verkkotopologia
+* Kuvaus käytetyistä palveluista
+* Sekvenssikaavio
+* Flowchart
+* Piirikaaviot
+
+Tulevaisuuden haaveet:
+    • text-to-speech-kone??
+    • 2-factor-authentication
+
+Tehtävänjako
+Arttu dokumentoi
+Tuukka toimii face recognitionin parissa yleisesti
+Samson saa ESP32:n flashattya/kommunikoimaan Raspberryn kanssa
+Jaber toimii raspberry pi:n kameran ohjauksen kanssa
+
 ## Työaikasuunnitelma
 
 <br><br>
