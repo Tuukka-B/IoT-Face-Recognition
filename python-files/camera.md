@@ -1,5 +1,4 @@
-
-´´´ python
+```python
 
 #configuring the camera in raspberypi
 #sudo raspi-config < interfacing options < camera < yes < ok . and reboot
@@ -24,4 +23,4 @@ with picamera.PiCamera()  as camera:
     camera.resolution = (1280,720)
     camera.capture("example.jpg")
 
-´´´
+```
