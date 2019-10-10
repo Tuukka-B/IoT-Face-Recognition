@@ -2,7 +2,10 @@
 
 ## Tekijät
 
-* Samson Azizyan (M3156), Arttu Häyrynen (M3350), Tuukka Bordi (M2296), Jaber Askari (M2947)
+* Samson Azizyan (M3156)<br>
+* Arttu Häyrynen (M3350)<br>
+* Tuukka Bordi (M2296)<br>
+* Jaber Askari (M2947)
 * Versionumero 0.2
 
 
