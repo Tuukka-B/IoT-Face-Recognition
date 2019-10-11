@@ -166,3 +166,7 @@ Hyödyllinen dokumentaatio (kannattaa tutustua):
 * [Verkkosivupohjainen remote shell Micropythonille (ESP32):](https://github.com/Hermann-SW/webrepl#webrepl-shell)
 * [Kätevät käyttöohjeet webrepl-shellille](https://forum.micropython.org/viewtopic.php?f=2&p=30829#p30829)
 * [Toinen käyttöohje webreplille](https://docs.micropython.org/en/latest/esp8266/tutorial/repl.html)
+
+## perjantai 11.10
+
+dlib ei asenna. Ohje: https://www.pyimagesearch.com/2017/05/01/install-dlib-raspberry-pi/
