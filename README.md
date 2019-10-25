@@ -124,6 +124,44 @@ Lisäksi käytämme tunnettuja Linux / Python-kirjastoja ESP32:n ohjaukseen
 
 ## Luokkakaavio
 
+```plantuml
+@startuml
+    class User {
+        +userName
+        +userEmail
+        +userImage
+        +__init__()
+    }
+    
+    class 2fa {
+        +knownImage
+        +unknownImage
+        +sendEmail()
+        +compare()
+    }
+    
+    class IoT {
+        
+    }
+    
+    class Serializer {
+    }
+    
+    class FaceRec {
+        +__init__()
+        +takeImage()
+    }
+    
+    User --|> FaceRec
+    FaceRec --|> 2fa
+    2fa --|> User
+    User --|> 2fa
+    2fa --|> IoT
+    Serializer --> User
+    
+@enduml
+```
+
 ## Työnjako
 
 
