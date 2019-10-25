@@ -115,8 +115,10 @@ Lisäksi käytämme tunnettuja Linux / Python-kirjastoja ESP32:n ohjaukseen
 @startuml
     User --|> Camera
     Camera --|> FaceRec
+    FaceRec --|> Authenthication
     Authenthication --|> User
     User --|> Authenthication
+    FaceRec --|> IoT
 @enduml
 ```
 
