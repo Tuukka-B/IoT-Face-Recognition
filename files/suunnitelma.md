@@ -16,7 +16,7 @@ Class facerec :
 	handle_auth(self, picture-name)
 	# compares picture to known pictures of users
 	user = serializer.deserialize(picture-name)
-	call 2fa to confirm auth
+	# call 2fa to confirm auth
 	returns result: user or None
 
 	post_auth
