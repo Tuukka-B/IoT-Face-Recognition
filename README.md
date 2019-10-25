@@ -152,11 +152,11 @@ Lisäksi käytämme tunnettuja Linux / Python-kirjastoja ESP32:n ohjaukseen
         +takeImage()
     }
     
-    User --|> FaceRec
-    FaceRec --|> 2fa
-    2fa --|> User
-    User --|> 2fa
-    2fa --|> IoT
+    User --> FaceRec
+    FaceRec --> 2fa
+    2fa --> User
+    User --> 2fa
+    2fa --> IoT
     Serializer --> User
     
 @enduml
