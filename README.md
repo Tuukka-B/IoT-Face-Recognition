@@ -45,6 +45,18 @@ Suunnitelemamme järjestelmä on Raspberry Pi:n pohjalle kameramoduulin avulla t
 
 
 ## Kohdeyleisö
+## Viikko raportit
+### Viikko 43
+#### Mitä tehtiin
+Asennettiin kaikki kirjastot kasvojentunnistusta varten
+Kokeiltiin ohjelmantoimtaa
+Tutkittiin ESP toimintoja
+Kirjoitettiin lyhyt testiohjelma joka käytti kasvojentunnistusta
+#### Kohdattuja ongelmia
+Dlib kirjasto ei asentunut kunnolla, ongelma saatiin korjattua lainaamalla kovalevyltä välimuistia eli lisäämällä swap muistin määrää. GPU:lta otettiin myös muistia pois 64:stä 16 MB 
+OpenCV kirjaston kanssa oli asennusongelma joka korjautui poistamalla se, asentamalla libatlas-base-dev, libjasper-dev, libqtgui4, python3-pyqt5 ja sen jälkeen asentamalla OpenCV-python
+#### Seuraavat askeleet
+Suunnitellaan ohjelman tarkempi toiminta.
 
 ## Käyttöympäristö ja käytetyt teknologiat
 
