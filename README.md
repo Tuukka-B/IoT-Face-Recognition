@@ -145,6 +145,7 @@ Lisäksi käytämme tunnettuja Linux / Python-kirjastoja ESP32:n ohjaukseen
     }
     
     class Serializer {
+        
     }
     
     class FaceRec {
@@ -157,7 +158,7 @@ Lisäksi käytämme tunnettuja Linux / Python-kirjastoja ESP32:n ohjaukseen
     2fa --> User
     User --> 2fa
     2fa --> IoT
-    Serializer --> User
+    Serializer <|-- User
     
 @enduml
 ```
