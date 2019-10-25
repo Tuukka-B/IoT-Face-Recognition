@@ -111,6 +111,15 @@ Lisäksi käytämme tunnettuja Linux / Python-kirjastoja ESP32:n ohjaukseen
 
 ## Käsitemalli
 
+```plantuml
+@startuml
+    User --|> Camera
+    Camera --|> FaceRec
+    Authenthication --|> User
+    User --|> Authenthication
+@enduml
+```
+
 ## Luokkakaavio
 
 ## Työnjako
