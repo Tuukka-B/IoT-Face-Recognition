@@ -118,7 +118,7 @@ Lisäksi käytämme tunnettuja Linux / Python-kirjastoja ESP32:n ohjaukseen
     FaceRec --|> Authenthication
     Authenthication --|> User
     User --|> Authenthication
-    FaceRec --|> IoT
+    Authenthication --|> IoT
 @enduml
 ```
 
