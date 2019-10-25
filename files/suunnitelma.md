@@ -1,4 +1,4 @@
-﻿
+```python
 From serializer import Serializer
 Import time
 Class facerec :
@@ -47,3 +47,4 @@ Class IoT:
 
 Class serializer:
 	#from Tuukka
+```
