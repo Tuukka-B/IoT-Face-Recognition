@@ -1,0 +1,6 @@
+git add .
+git commit -m "commit-message"
+git push https://gitlab.labranet.jamk.fi/M3156/iot-face-recognition.git
+pulling:
+git pull https://gitlab.labranet.jamk.fi/M3156/iot-face-recognition.git
+
