@@ -1,10 +1,10 @@
 
 
-
 ```python
 
 class User:
-    def __init__(self,name,image,email):
+    def __init__(self,id,name,image,email):
+        self.__id=id
         self.__name=name
         self.__image=image
         self.__email=email
