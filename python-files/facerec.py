@@ -28,7 +28,7 @@ def facerec():
     known_face_names = [
         "Samson",
         "Tuukka",
-        "Jaber"
+        "Jaber",
         "Arttu"
     ]
     # Initialize some variables
