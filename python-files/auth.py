@@ -2,9 +2,11 @@ import smtplib
 import imaplib
 import random
 
-key = ''
-for x in range(10):
-  key += str(random.randint(0,9))
+def key(): 
+    key = ''
+    for x in range(10):
+      key += str(random.randint(0,9))
+    return key
 
 print(key)
 
@@ -65,11 +67,13 @@ def readEmail(key):
     print(email_subject)
     if email_subject==str(key):
         print('success')
+        return True
     else:
         print('fail')
+        return False
 
-sendEmail('tuukka.bordi@hotmail.fi', key)
+#sendEmail('tuukka.bordi@hotmail.fi', key)
 
-lol = input("Done?")
+#lol = input("Done?")
 
-readEmail(key)
+#readEmail(key)

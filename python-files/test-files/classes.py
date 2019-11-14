@@ -45,14 +45,10 @@ class user:
 	
 		
 class 2fa:
-
+    def __init__(self):
+        
 	def send_email(self):
         pass
 
-class IoT:
+def IoT(conn, command):
 	pass
-
-
-class serializer:
-	#from Tuukka
-```
