@@ -8,9 +8,8 @@ def key():
       key += str(random.randint(0,9))
     return key
 
-print(key)
-
 def sendEmail(email, key):
+    print(f"Authenticating user of the address {email}...")
     TO = email
     SUBJECT = 'IOT 2FA'
     TEXT = key
@@ -18,17 +17,17 @@ def sendEmail(email, key):
     # Gmail Sign In
     gmail_sender = 'iot.ttv18s@gmail.com'
     gmail_passwd = 'askarisamson'
-    print('1')
+    #print('1')
     #server = smtplib.SMTP('smtp.gmail.com', 587)
     server = smtplib.SMTP_SSL('smtp.gmail.com','465')
-    print('2')
+    #print('2')
 
     #server.starttls()
-    print('3')
+    #print('3')
     server.ehlo()
-    print('4')
+    #print('4')
     server.login(gmail_sender, gmail_passwd)
-    print('5')
+    #print('5')
 
     BODY = '\r\n'.join(['To: %s' % TO,
                         'From: %s' % gmail_sender,
@@ -37,10 +36,10 @@ def sendEmail(email, key):
 
     try:
         server.sendmail(gmail_sender, [TO], BODY)
-        print ('email sent')
+        #print ('email sent')
     except:
-        print ('error sending mail')
-
+        pass
+        #print ('error sending mail')
     server.quit()
 
 def readEmail(key):
@@ -64,12 +63,12 @@ def readEmail(key):
     z = e.split('Subject:')
     y = z[1].split('\r')
     email_subject = y[0].strip()
-    print(email_subject)
+    #print(email_subject)
     if email_subject==str(key):
-        print('success')
+        print('Authentication confirmed')
         return True
     else:
-        print('fail')
+        print('Authentication failed')
         return False
 
 #sendEmail('tuukka.bordi@hotmail.fi', key)
