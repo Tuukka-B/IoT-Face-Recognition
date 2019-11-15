@@ -9,8 +9,12 @@
 			"email": "samsonitto@gmail.com"
 		},
 		"Jaber": {
-			"image": "samson.jpg",
-			"email": "samsonitto@gmail.com"
+			"image": "jaber.jpg",
+			"email": "rebaj.askari@gmail.com"
+		},
+		"Arttu": {
+		    "image": "arttu.jpg",
+		    "email": "m3350@student.jamk.fi"
 		}
 	}
 }
