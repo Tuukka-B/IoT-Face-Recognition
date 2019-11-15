@@ -9,7 +9,7 @@ def key():
     return key
 
 def sendEmail(email, key):
-    print(f"Authenticating user of the address {email}...")
+    print(("Authenticating user of the address %s...").format(email))
     TO = email
     SUBJECT = 'IOT 2FA'
     TEXT = key
@@ -52,7 +52,7 @@ def readEmail(key):
     server.login(username, password)
     server.select('INBOX')
 
-    data = server.uid('search',None, f'(SUBJECT {key})')
+    data = server.uid('search',None, ('SUBJECT %i').format(key))
     server.select('Inbox')
     status, data = server.search(None, 'ALL')
     for num in data[0].split():

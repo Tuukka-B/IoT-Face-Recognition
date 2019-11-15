@@ -12,11 +12,11 @@ import numpy as np
 def facerec():
     video_capture = cv2.VideoCapture(0)
     samson_image = face_recognition.load_image_file("samson.jpg")
-    samson_face_encoding = face_recognition.face_encodings("samson.jpg")[0]
+    samson_face_encoding = face_recognition.face_encodings(samson_image)[0]
     tuukka_image = face_recognition.load_image_file("tuukka.jpg")
-    tuukka_face_encoding = face_recognition.face_encodings("tuukka.jpg")[0]
+    tuukka_face_encoding = face_recognition.face_encodings(tuukka_image)[0]
     jaber_image = face_recognition.load_image_file("jaber.jpg")
-    jaber_face_encoding = face_recognition.face_encodings("jaber.jpg")[0]
+    jaber_face_encoding = face_recognition.face_encodings(jaber_image)[0]
     #arttu_image = face_recognition.load_image_file("arttu.jpg")
     #arttu_face_encoding = face_recognition.face_encodings("arttu.jpg")[0]
     
@@ -28,8 +28,7 @@ def facerec():
     known_face_names = [
         "Samson",
         "Tuukka",
-        "Jaber",
-        "Arttu"
+        "Jaber"
     ]
     # Initialize some variables
     face_locations = []
@@ -38,6 +37,7 @@ def facerec():
     process_this_frame = True
     
     while True:
+        print("in a loop")
         # Grab a single frame of video
         ret, frame = video_capture.read()
     
@@ -104,6 +104,7 @@ def facerec():
             break
     
     # Release handle to the webcam
+
     video_capture.release()
     cv2.destroyAllWindows()
         

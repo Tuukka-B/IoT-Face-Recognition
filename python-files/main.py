@@ -12,17 +12,15 @@ import facerec
 import json
 import sys
 if __name__ == '__main__':
-    jsonloc = "./../files/json.json"
+    jsonloc = "./../files/db.json"
     #known_img_dir = ""
     recognised = "Unknown"
     count = 0
     jsondata = ""
     with open(jsonloc,"r") as jsonfile:
         data = jsonfile.read()
-        #sys.exit(1)
         jsondata = json.loads(data)
         #print(jsondata["user"]["Tuukka"]["email"])
-    #sys.exit(1)
     while True:
         # mainloop, waits to recognise a face
         #######################################################################
@@ -54,7 +52,7 @@ if __name__ == '__main__':
             try:
                 email = jsondata["user"][recognised]["email"]
             except:
-                print(f"User named {recognised} was not found from the database!\Exiting authentication...")
+                print(('User named %s was not found from the database!\nExiting authentication').format(recognised))
                 break
             key = auth.key()
             auth.sendEmail(email, key)
@@ -65,7 +63,7 @@ if __name__ == '__main__':
                 break
             
             #greet the guest
-            print(f"Hello {recognised}!")
+            print(("Hello %s!").format(recognised))
             
             #reinitializes variables that track failed attempts
             count = 0
