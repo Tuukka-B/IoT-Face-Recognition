@@ -8,15 +8,17 @@ Created on Thu Nov 14 18:32:12 2019
 """
 
 import auth
-import facerec
 import json
-import sys
+#import sys
+import cl_facerec
 if __name__ == '__main__':
     jsonloc = "./../files/db.json"
-    #known_img_dir = ""
-    recognised = "Unknown"
+    known_img_dir = "./"
+    unknown_img_dir = "./unknown/"
+    recognised = None
     count = 0
     jsondata = ""
+    p = cl_facerec.facerec(known_img_dir)
     with open(jsonloc,"r") as jsonfile:
         data = jsonfile.read()
         jsondata = json.loads(data)
@@ -27,11 +29,7 @@ if __name__ == '__main__':
         
         #variable for recognising failed authentication attempts
         old = recognised
-        recognised = facerec.facerec()
-        if "list" in type(recognised):
-            # multiple recognitions happened... choosing the primary one (first)
-            recognised = recognised[0]
-        
+        recognised = p.compare()
         #increasing the counter of failed attempts
         if recognised == old:
             count+=1
@@ -45,14 +43,14 @@ if __name__ == '__main__':
         #######################################################################
         
         # attempts are capped at 3 (first attempt is not logged)
-        while count < 3 and recognised != "Unknown":
+        while count < 3 and recognised != None:
             #generates key
             #authenticate the recognised user
             email = ""
             try:
                 email = jsondata["user"][recognised]["email"]
             except:
-                print(('User named %s was not found from the database!\nExiting authentication').format(recognised))
+                print(("User named '{}' was not found from the database!\nExiting authentication").format(recognised))
                 break
             key = auth.key()
             auth.sendEmail(email, key)
@@ -63,11 +61,11 @@ if __name__ == '__main__':
                 break
             
             #greet the guest
-            print(("Hello %s!").format(recognised))
+            print(("Hello {}!").format(recognised))
             
             #reinitializes variables that track failed attempts
             count = 0
-            old = "Unknown"
+            old = None
             # TO-DO: TTS voice greeting
         
         
