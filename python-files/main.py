@@ -18,7 +18,7 @@ if __name__ == '__main__':
     recognised = None
     count = 0
     jsondata = ""
-    p = cl_facerec.facerec(known_img_dir)
+    p = cl_facerec.facerec(known_img_dir, unknown_img_dir)
     with open(jsonloc,"r") as jsonfile:
         data = jsonfile.read()
         jsondata = json.loads(data)
