@@ -82,7 +82,7 @@ class facerec :
         recognition = False
         """DEBUGGING CODE"""
         while True:
-            num = input("choose a image to compare to:\n0 = tuukka, 1 = samson, 2 = jaber, 'g' to quit")
+            num = input("choose a image to compare to:\n0 = tuukka, 1 = samson, 2 = jaber, 'q' to quit")
             if num == "q":
                 return None
             else:
