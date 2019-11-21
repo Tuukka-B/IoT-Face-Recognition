@@ -85,6 +85,8 @@ class facerec :
             num = input("choose a image to compare to:\n0 = tuukka, 1 = samson, 2 = jaber, 'g' to quit")
             if num == "q":
                 return None
+            else:
+                num = int(num)
             results = face_recognition.compare_faces(self.__known_faces[num], unknown_encoding)
             print(("comparison result, {}").format(results))
         """ DEBUGGING CODE ENDS"""
