@@ -85,10 +85,10 @@ class facerec :
             if results == True:
                 recognition = self.__known_faces.index(face_encoding)
         
-        print("Is the unknown face a picture of Tuukka {}".format(results[0]))
-        print("Is the unknown face a picture of Samson? {}".format(results[1]))
-        print("Is the unknown face a picture of Jaber? {}".format(results[2]))
-        print("Is the unknown face a new person that we've never seen before? {}".format(not True in results))
+        print("Is the unknown face a picture of Tuukka {}".format(recognition == 0))
+        print("Is the unknown face a picture of Samson? {}".format(recognition == 1))
+        print("Is the unknown face a picture of Jaber? {}".format(recognition == 2))
+        print("Is the unknown face a new person that we've never seen before? {}".format(not True in recognition))
         if recognition == 0:
             return "Tuukka"
         elif recognition == 1:
