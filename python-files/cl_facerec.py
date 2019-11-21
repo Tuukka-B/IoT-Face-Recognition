@@ -46,6 +46,7 @@ class facerec :
         self.__image_data = None
         self.__timestamp = None
         
+        __init_camera()
     def __init_camera(self):
         self.__camera = picamera.PiCamera()
         self.__camera.resolution = (320, 240) #to make it faster
