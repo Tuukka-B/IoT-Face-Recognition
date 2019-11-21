@@ -47,6 +47,7 @@ class facerec :
         self.__timestamp = None
         self.__camera = picamera.PiCamera()
         self.__camera.resolution = (320, 240) #to make it faster
+        self.__capture = numpy.empty((240, 320, 3), dtype=numpy.uint8)
     # Load the jpg files into numpy arrays
     def compare(self):
         
@@ -63,17 +64,17 @@ class facerec :
         # but this doesn't save images to disk...
         #camera.capture(path)
         """new code"""
-        stream = io.BytesIO()
+        #stream = io.BytesIO() obsolete
         # capture into stream
-        self.__camera.capture(stream, format='rgb', use_video_port=True)
+        self.__camera.capture(self.__capture, format='rgb', use_video_port=True)
         # convert image into numpy array
-        self.__image_data = numpy.fromstring(stream.getvalue(), dtype=numpy.uint8)
+        #self.__image_data = numpy.fromstring(stream.getvalue(), dtype=numpy.uint8) #obsolete
         """end new code"""
         
         self.__camera.stop_preview()
         
         """ new"""
-        unknown_image = self.__image_data # new way
+        unknown_image = self.__capture # new way
         """end new"""
         #unknown_image = face_recognition.load_image_file(path) #old way
         #unknown_encoding = face_recognition.face_encodings(unknown_image)[0] #old way
