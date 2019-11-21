@@ -43,7 +43,6 @@ class facerec :
                 self.__samson_face_encoding,
                 self.__jaber_face_encoding
         ]
-        self.__image_data = None
         self.__timestamp = None
         self.__camera = picamera.PiCamera()
         self.__camera.resolution = (320, 240) #to make it faster
@@ -80,17 +79,21 @@ class facerec :
         #unknown_encoding = face_recognition.face_encodings(unknown_image)[0] #old way
         unknown_encoding = face_recognition.face_encodings(unknown_image) #NEW!
         # results is an array of True/False telling if the unknown face matched anyone in the known_faces array
-        results = face_recognition.compare_faces(self.__known_faces, unknown_encoding)
+        recognition = False
+        for face_encoding in self.__known_faces:
+            results = face_recognition.compare_faces(face_encoding, unknown_encoding)
+            if results == True:
+                recognition = self.__known_faces.index(face_encoding)
         
         print("Is the unknown face a picture of Tuukka {}".format(results[0]))
         print("Is the unknown face a picture of Samson? {}".format(results[1]))
         print("Is the unknown face a picture of Jaber? {}".format(results[2]))
         print("Is the unknown face a new person that we've never seen before? {}".format(not True in results))
-        if results[0]:
+        if recognition == 0:
             return "Tuukka"
-        elif results[1]:
+        elif recognition == 1:
             return "Samson"
-        elif results[2]:
+        elif recognition == 2:
             return "Jaber"
         #TO-DO: Add Arttu
         else:
@@ -100,6 +103,6 @@ class facerec :
         from PIL import Image
         filename = self.__timestamp + ".jpg"
         imgpath = os.path.join(self.__unknown_img_dir, filename)
-        self.__data.transpose()
-        img = Image.fromarray(self.__data, 'RGB')
+        self.__capture.transpose()
+        img = Image.fromarray(self.__capture, 'RGB')
         img.save(imgpath)
