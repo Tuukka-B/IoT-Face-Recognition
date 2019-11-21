@@ -31,7 +31,7 @@ class facerec :
         self.__samson_image = face_recognition.load_image_file("samson.jpg")
         self.__jaber_image = face_recognition.load_image_file("jaber.jpg")
         try:
-            self.__tuukka_face_encoding = face_recognition.face_encodings(self.__jaber_image)[0]
+            self.__tuukka_face_encoding = face_recognition.face_encodings(self.__tuukka_image)[0]
             self.__samson_face_encoding = face_recognition.face_encodings(self.__samson_image)[0]
             self.__jaber_face_encoding = face_recognition.face_encodings(self.__jaber_image)[0]
         except IndexError:
@@ -88,7 +88,7 @@ class facerec :
         print("Is the unknown face a picture of Tuukka {}".format(recognition == 0))
         print("Is the unknown face a picture of Samson? {}".format(recognition == 1))
         print("Is the unknown face a picture of Jaber? {}".format(recognition == 2))
-        print("Is the unknown face a new person that we've never seen before? {}".format(not True in recognition))
+        print("Is the unknown face a new person that we've never seen before? {}".format(recognition == False))
         if recognition == 0:
             return "Tuukka"
         elif recognition == 1:
