@@ -55,7 +55,6 @@ class facerec :
         self.__camera.start_preview(fullscreen=False,window=(100,200,300,400))
         
         nappi = None
-        path = None
         nappi = input('Ota kuva (näppäin + enter = ota kuva, q + enter = poistu) > ')
         if nappi == 'q':
             return None
@@ -63,7 +62,7 @@ class facerec :
         #camera.capture(__capture, format = 'rgb') #if we really want fast...
         # but this doesn't save images to disk...
         #camera.capture(path)
-         """new code"""
+        """new code"""
         stream = io.BytesIO()
         # capture into stream
         self.__camera.capture(stream, format='rgb', use_video_port=True)
@@ -74,7 +73,7 @@ class facerec :
         self.__camera.stop_preview()
         
         """ new"""
-        unknown_image = data # new way
+        unknown_image = self.__image_data # new way
         """end new"""
         #unknown_image = face_recognition.load_image_file(path) #old way
         #unknown_encoding = face_recognition.face_encodings(unknown_image)[0] #old way
@@ -99,7 +98,7 @@ class facerec :
     def convert_img(self):
         from PIL import Image
         filename = self.__timestamp + ".jpg"
-        path = os.path.join(self.__unknown_img_dir, filename)
-        data.transpose()
-        img = Image.fromarray(data, 'RGB')
-        img.save(filename)
+        imgpath = os.path.join(self.__unknown_img_dir, filename)
+        self.__data.transpose()
+        img = Image.fromarray(self.__data, 'RGB')
+        img.save(imgpath)
