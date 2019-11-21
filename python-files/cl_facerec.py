@@ -59,7 +59,7 @@ class facerec :
         
         nappi = None
         path = None
-        nappi = input('Ota kuva (näppäin + enter = ota kuva, q = poistu) > ')
+        nappi = input('Ota kuva (näppäin + enter = ota kuva, q + enter = poistu) > ')
         if nappi == 'q':
             return None
         self.__timestamp = time.strftime("%Y-%m-%d_%H:%M:%S")
@@ -74,7 +74,7 @@ class facerec :
         self.__image_data = numpy.fromstring(stream.getvalue(), dtype=numpy.uint8)
         """end new code"""
         
-        camera.stop_preview()
+        self.__camera.stop_preview()
         
         """ new"""
         unknown_image = data # new way
