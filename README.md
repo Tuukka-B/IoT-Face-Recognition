@@ -58,6 +58,23 @@ OpenCV kirjaston kanssa oli asennusongelma joka korjautui poistamalla se, asenta
 #### Seuraavat askeleet
 Suunnitellaan ohjelman tarkempi toiminta.
 
+### Viikko 47
+#### Mitä tehtiin
+Muokattiin face_recognition softaa nopeammaksi ja lisättiin uusi ominaisuus kuvien tallentamiseksi levylle. Ennen kuvat tallennettiin ensin levylle, jonka jälkeen ne encoodattiin. Tämä oli hidas prosessi. Nyt kuvat tallennetaan numpy-array-muotoon tietokoneen välimuistiin.
+
+#### Kohdattuja ongelmia
+Koska Raspberry ja koodaaja olivat eri paikoissa, testaus oli osin hidasta ja turhauttavaa (push ja pull x monta kertaa). Korjattiin bugeja koodista, mutta emme saaneet softaa vielä täysin toimimaan. Viimeisin bugi koski vieläpä koodin osa-aluetta, johon ei edes koskettu ja joka toimi edellisellä suorituskerralla. Epäilemme, että vika on jossain kuvassa ja että tämän takia face_recognition kirjasto tekee encoodauksen virheellisesti (jonka takia kirjaston compare-faces-funktio kaatuu). Lisäsimme tämän tunnistusta varten debugging-koodia, jonka testaamiseen palaamme maanantaina 25.11.
+#### Seuraavat askeleet
+Saada kaikki ohjelmiston osaset toimimaan yhdessä. ESP-koodin lisäys main-koodiin ja sen testaus. Kuvat levylle tallentavan koodin lisäys koodiin johonkin kohtaan, jossa se ei kohtuuttomasti hidasta ohjelman toimintaan (vaikkapa siihen kohtaan, jossa odotetaan sähköpostitunnistautumista).
+
+Jos aika riittää, niin nämä asiat:
+* käyttää grove-nappia kuvan ottamiseen (koodi valmiina grove-napille)
+* lisätä text-to-speech-ominaisuus
+* lisätä hälytysfunktio, jos sama henkilö epäonnistuu tunnistautumisessa kolme kertaa (perusta tälle jo valmis)
+** tähän voisi käyttää vaikka grove-buzzeria, joka löytyy eräältä tiimin jäseneltä (buzzer koodi jo valmis).
+* Aloittaa loppuraportin teko
+
+
 ## Käyttöympäristö ja käytetyt teknologiat
 
 Projekti vaatii seuraavat Linux-kirjastot: 
