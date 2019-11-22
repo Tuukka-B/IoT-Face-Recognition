@@ -10,7 +10,7 @@ import face_recognition
 import picamera
 import os
 import time
-import io
+#import io
 import numpy
 class facerec :
     
@@ -45,7 +45,7 @@ class facerec :
         ]
         self.__timestamp = None
         self.__camera = picamera.PiCamera()
-        self.__camera.resolution = (320, 240) #to make it faster
+        self.__camera.resolution = (320, 240) #lower the resolution to make it faster
         self.__capture = numpy.empty((240, 320, 3), dtype=numpy.uint8)
     # Load the jpg files into numpy arrays
     def compare(self):
@@ -82,7 +82,7 @@ class facerec :
         recognition = False
         """DEBUGGING CODE"""
         while True:
-            num = input("choose a image to compare to:\n0 = tuukka, 1 = samson, 2 = jaber, 'q' to quit\n")
+            num = input("choose an image to compare to:\n0 = tuukka, 1 = samson, 2 = jaber, 'q' to quit\n")
             if num == "q":
                 return None
             else:
@@ -115,4 +115,10 @@ class facerec :
         imgpath = os.path.join(self.__unknown_img_dir, filename)
         self.__capture.transpose()
         img = Image.fromarray(self.__capture, 'RGB')
+        #reinitialialization of __capture
+        self.__capture = numpy.empty((240, 320, 3), dtype=numpy.uint8)
         img.save(imgpath)
+        
+#if __name__ == "__main__":
+#    p = cl_facerec("./", "./unknown/")
+#    p.compare()
