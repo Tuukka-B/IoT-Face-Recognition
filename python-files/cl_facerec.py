@@ -86,7 +86,11 @@ class facerec :
             if num == "q":
                 return None
             else:
-                num = int(num)
+                try:
+                    num = int(num)
+                except Exception:
+                    print("Invalid command,please input a number to continue or 'q' to quit.")
+                    continue
             results = face_recognition.compare_faces(self.__known_faces[num], unknown_encoding)
             print(("comparison result, {}").format(results))
         """ DEBUGGING CODE ENDS"""
