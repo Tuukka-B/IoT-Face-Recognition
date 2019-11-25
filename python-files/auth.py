@@ -2,6 +2,8 @@ import smtplib
 import imaplib
 import random
 
+#key = ''
+
 def key(): 
     key = ''
     for x in range(10):
@@ -52,7 +54,7 @@ def readEmail(key):
     server.login(username, password)
     server.select('INBOX')
 
-    data = server.uid('search',None, ('SUBJECT %i').format(key))
+    data = server.uid('search',None, ('SUBJECT {}').format(key))
     server.select('Inbox')
     status, data = server.search(None, 'ALL')
     for num in data[0].split():
@@ -71,7 +73,9 @@ def readEmail(key):
         print('Authentication failed')
         return False
 
-#sendEmail('tuukka.bordi@hotmail.fi', key)
+
+#key = key()
+#sendEmail('samsonitto@gmail.com', key)
 
 #lol = input("Done?")
 
