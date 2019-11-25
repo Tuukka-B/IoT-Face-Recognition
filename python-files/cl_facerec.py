@@ -106,7 +106,7 @@ class facerec :
         print("Is the unknown face a picture of Tuukka {}".format(recognition == 0))
         print("Is the unknown face a picture of Samson? {}".format(recognition == 1))
         print("Is the unknown face a picture of Jaber? {}".format(recognition == 2))
-        print("Is the unknown face a new person that we've never seen before? {}".format(recognition  != False))
+        print("Is the unknown face a new person that we've never seen before? {}".format(recognition  == "None"))
         if recognition == 0:
             return "Tuukka"
         elif recognition == 1:
@@ -117,7 +117,7 @@ class facerec :
         else:
             return None
         
-    def convert_img(self):
+    def save_img(self):
         from PIL import Image
         filename = self.__timestamp + ".jpg"
         imgpath = os.path.join(self.__unknown_img_dir, filename)

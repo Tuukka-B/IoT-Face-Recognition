@@ -59,6 +59,8 @@ if __name__ == '__main__':
             input("email: >")
             auth = auth.readEmail(key)
             if auth == False:
+                print("Incident reported.")
+                p.save_img()
                 count+=1
                 #goes back to facerec stage
                 break
