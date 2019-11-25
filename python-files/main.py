@@ -30,6 +30,7 @@ if __name__ == '__main__':
         #variable for recognising failed authentication attempts
         old = recognised
         recognised = p.compare()
+        print(recognised)
         #increasing the counter of failed attempts
         if recognised == old:
             count+=1
@@ -49,11 +50,13 @@ if __name__ == '__main__':
             email = ""
             try:
                 email = jsondata["user"][recognised]["email"]
+                print(email)
             except:
                 print(("User named '{}' was not found from the database!\nExiting authentication").format(recognised))
                 break
             key = auth.key()
             auth.sendEmail(email, key)
+            input("email: >")
             auth = auth.readEmail(key)
             if auth == False:
                 count+=1
