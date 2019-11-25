@@ -94,15 +94,19 @@ class facerec :
             results = face_recognition.compare_faces(self.__known_faces[num], unknown_encoding)
             print(("comparison result, {}").format(results))
         DEBUGGING CODE ENDS"""
+        count = 0
         for face_encoding in self.__known_faces:
             results = face_recognition.compare_faces(face_encoding, unknown_encoding)
             if results == True:
                 recognition = self.__known_faces.index(face_encoding)
+                print(("face recognised at index '{}', real index should be {}").format(recognition, count))
+                recognition = count
+            count += 1
         
         print("Is the unknown face a picture of Tuukka {}".format(recognition == 0))
         print("Is the unknown face a picture of Samson? {}".format(recognition == 1))
         print("Is the unknown face a picture of Jaber? {}".format(recognition == 2))
-        print("Is the unknown face a new person that we've never seen before? {}".format(recognition == False))
+        print("Is the unknown face a new person that we've never seen before? {}".format(recognition  != False))
         if recognition == 0:
             return "Tuukka"
         elif recognition == 1:
