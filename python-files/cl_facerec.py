@@ -97,7 +97,7 @@ class facerec :
         count = 0
         for count in range(0,3):
             results = face_recognition.compare_faces(self.__known_faces[count], unknown_encoding)
-            if results == True:
+            if results[0] == True:
                 recognition = self.__known_faces.index(face_encoding)
                 print(("face recognised at index '{}', real index should be {}").format(recognition, count))
                 recognition = count
