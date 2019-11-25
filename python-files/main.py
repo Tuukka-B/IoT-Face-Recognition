@@ -9,6 +9,8 @@ Created on Thu Nov 14 18:32:12 2019
 
 import auth
 import json
+import esp32client
+import time
 #import sys
 import cl_facerec
 if __name__ == '__main__':
@@ -34,6 +36,8 @@ if __name__ == '__main__':
         #increasing the counter of failed attempts
         if recognised == old:
             count+=1
+        else:
+            count = 0
         if count > 2:
             # PLAY THE ALARM!!! WE HAVE AN INTRUDER
             # we could even do an alarm function with emails and stuff that
@@ -59,8 +63,8 @@ if __name__ == '__main__':
             input("email: >")
             au = auth.readEmail(avain)
             if au == False:
-                print("Incident reported.")
-                p.save_img()
+                count+=1
+                #goes back to facerec stage
                 break
             
             #greet the guest
@@ -74,10 +78,9 @@ if __name__ == '__main__':
         
             # IoT commands to ESP32
             ###################################################################
-            
-            """
-            some stuf
-            """
+            esp32client.sendData('1')
+            time.sleep(5)
+            esp32client.sendData('0')
             
             #after IoT commands, let's go back to the mainloop
             break

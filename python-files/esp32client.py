@@ -2,10 +2,10 @@ import socket
 
 data = input("Data to send > ")
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-def sendData(mySocket, message):
-    
+def sendData(message):
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     address = "192.168.43.7"
     portNum = 80
     
@@ -25,5 +25,5 @@ def sendData(mySocket, message):
     except Exception as exc:
             print("Exception: {0}".format(exc))
             
-sendData(s, data)
+#sendData(s, data)
      

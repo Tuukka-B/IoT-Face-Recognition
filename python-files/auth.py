@@ -11,7 +11,7 @@ def key():
     return key
 
 def sendEmail(email, key):
-    print(("Authenticating user of the address %s...").format(email))
+    print(("Authenticating user of the address {}...").format(email))
     TO = email
     SUBJECT = 'IOT 2FA'
     TEXT = key
