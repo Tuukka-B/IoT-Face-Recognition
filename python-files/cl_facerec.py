@@ -79,7 +79,7 @@ class facerec :
         #unknown_encoding = face_recognition.face_encodings(unknown_image)[0] #old way
         unknown_encoding = face_recognition.face_encodings(unknown_image) #NEW!
         # results is an array of True/False telling if the unknown face matched anyone in the known_faces array
-        recognition = False
+        recognition = "None"
         """DEBUGGING CODE
         while True:
             num = input("choose an image to compare to:\n0 = tuukka, 1 = samson, 2 = jaber, 'q' to quit\n")
@@ -95,8 +95,8 @@ class facerec :
             print(("comparison result, {}").format(results))
         DEBUGGING CODE ENDS"""
         count = 0
-        for face_encoding in self.__known_faces:
-            results = face_recognition.compare_faces(face_encoding, unknown_encoding)
+        for count in range(0,3):
+            results = face_recognition.compare_faces(self.__known_faces[count], unknown_encoding)
             if results == True:
                 recognition = self.__known_faces.index(face_encoding)
                 print(("face recognised at index '{}', real index should be {}").format(recognition, count))
