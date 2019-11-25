@@ -57,15 +57,12 @@ if __name__ == '__main__':
             avain = auth.key()
             auth.sendEmail(email, avain)
             input("email: >")
-<<<<<<< HEAD
             auth = auth.readEmail(key)
             if auth == False:
                 print("Incident reported.")
                 p.save_img()
-=======
             au = auth.readEmail(avain)
             if au == False:
->>>>>>> 9418fb5ca58a654c6c3cc51595b3b9709d9886be
                 count+=1
                 #goes back to facerec stage
                 break
