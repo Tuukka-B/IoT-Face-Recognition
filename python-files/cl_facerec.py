@@ -65,7 +65,7 @@ class facerec :
         """new code"""
         #stream = io.BytesIO() obsolete
         # capture into stream
-        self.__camera.capture(self.__capture, format='rgb', use_video_port=True)
+        self.__camera.capture(self.__capture, format='rgb')
         # convert image into numpy array
         #self.__image_data = numpy.fromstring(stream.getvalue(), dtype=numpy.uint8) #obsolete
         """end new code"""
