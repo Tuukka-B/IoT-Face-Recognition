@@ -54,11 +54,11 @@ if __name__ == '__main__':
             except:
                 print(("User named '{}' was not found from the database!\nExiting authentication").format(recognised))
                 break
-            key = auth.key()
-            auth.sendEmail(email, key)
+            avain = auth.key()
+            auth.sendEmail(email, avain)
             input("email: >")
-            auth = auth.readEmail(key)
-            if auth == False:
+            au = auth.readEmail(avain)
+            if au == False:
                 count+=1
                 #goes back to facerec stage
                 break
