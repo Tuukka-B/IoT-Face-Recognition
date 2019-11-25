@@ -57,14 +57,10 @@ if __name__ == '__main__':
             avain = auth.key()
             auth.sendEmail(email, avain)
             input("email: >")
-            auth = auth.readEmail(key)
-            if auth == False:
-                print("Incident reported.")
-                p.save_img()
             au = auth.readEmail(avain)
             if au == False:
-                count+=1
-                #goes back to facerec stage
+                print("Incident reported.")
+                p.save_img()
                 break
             
             #greet the guest
