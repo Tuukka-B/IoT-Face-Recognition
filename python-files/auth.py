@@ -2,7 +2,6 @@ import smtplib
 import imaplib
 import random
 
-#key = ''
 
 def key(): 
     key = ''

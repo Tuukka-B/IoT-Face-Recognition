@@ -24,13 +24,13 @@ if __name__ == '__main__':
     with open(jsonloc,"r") as jsonfile:
         data = jsonfile.read()
         jsondata = json.loads(data)
-        #print(jsondata["user"]["Tuukka"]["email"])
     while True:
         # mainloop, waits to recognise a face
         #######################################################################
         
         #variable for recognising failed authentication attempts
         old = recognised
+
         recognised = p.compare()
         print(recognised)
         #increasing the counter of failed attempts
@@ -60,7 +60,7 @@ if __name__ == '__main__':
                 break
             avain = auth.key()
             auth.sendEmail(email, avain)
-            input("email: >")
+            input("email sent? >")
             au = auth.readEmail(avain)
             if au == False:
                 count+=1
@@ -78,8 +78,10 @@ if __name__ == '__main__':
         
             # IoT commands to ESP32
             ###################################################################
+	    print("sending command to ESP32 to light the led...)
             esp32client.sendData('1')
             time.sleep(5)
+	    print("Powering off the led...")
             esp32client.sendData('0')
             
             #after IoT commands, let's go back to the mainloop
