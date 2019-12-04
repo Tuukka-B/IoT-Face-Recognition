@@ -12,6 +12,7 @@ import os
 import time
 #import io
 import numpy
+import grove
 class facerec :
     
     def __init__(self, known_img_dir, unknown_img_dir):
@@ -49,73 +50,79 @@ class facerec :
         self.__capture = numpy.empty((240, 320, 3), dtype=numpy.uint8)
     # Load the jpg files into numpy arrays
     def compare(self):
-        
-        #__capture = numpy.empty((240, 320, 3), dtype=numpy.uint8) 
-        # above to make it even more faster
-        self.__camera.start_preview(fullscreen=False,window=(100,200,300,400))
-        
-        nappi = None
-        nappi = input('Ota kuva (näppäin + enter = ota kuva, q + enter = poistu) > ')
-        if nappi == 'q':
-            return None
-        self.__timestamp = time.strftime("%Y-%m-%d_%H:%M:%S")
-        #camera.capture(__capture, format = 'rgb') #if we really want fast...
-        # but this doesn't save images to disk...
-        #camera.capture(path)
-        """new code"""
-        #stream = io.BytesIO() obsolete
-        # capture into stream
-        self.__camera.capture(self.__capture, format='rgb')
-        # convert image into numpy array
-        #self.__image_data = numpy.fromstring(stream.getvalue(), dtype=numpy.uint8) #obsolete
-        """end new code"""
-        
-        self.__camera.stop_preview()
-        
-        """ new"""
-        unknown_image = self.__capture # new way
-        """end new"""
-        #unknown_image = face_recognition.load_image_file(path) #old way
-        #unknown_encoding = face_recognition.face_encodings(unknown_image)[0] #old way
-        unknown_encoding = face_recognition.face_encodings(unknown_image) #NEW!
-        # results is an array of True/False telling if the unknown face matched anyone in the known_faces array
-        recognition = "None"
-        """DEBUGGING CODE
-        while True:
-            num = input("choose an image to compare to:\n0 = tuukka, 1 = samson, 2 = jaber, 'q' to quit\n")
-            if num == "q":
+        try:
+            #__capture = numpy.empty((240, 320, 3), dtype=numpy.uint8) 
+            # above to make it even more faster
+            self.__camera.start_preview(fullscreen=False,window=(100,200,300,400))
+            """
+            nappi = None
+            nappi = input('Ota kuva (näppäin + enter = ota kuva, q + enter = poistu) > ')
+            if nappi == 'q':
                 return None
+            """
+            grove.button()
+            self.__timestamp = time.strftime("%Y-%m-%d_%H:%M:%S")
+            #camera.capture(__capture, format = 'rgb') #if we really want fast...
+            # but this doesn't save images to disk...
+            #camera.capture(path)
+            """new code"""
+            #stream = io.BytesIO() obsolete
+            # capture into stream
+            self.__camera.capture(self.__capture, format='rgb')
+            # convert image into numpy array
+            #self.__image_data = numpy.fromstring(stream.getvalue(), dtype=numpy.uint8) #obsolete
+            """end new code"""
+            
+            self.__camera.stop_preview()
+            
+            """ new"""
+            unknown_image = self.__capture # new way
+            """end new"""
+            #unknown_image = face_recognition.load_image_file(path) #old way
+            #unknown_encoding = face_recognition.face_encodings(unknown_image)[0] #old way
+            unknown_encoding = face_recognition.face_encodings(unknown_image) #NEW!
+            # results is an array of True/False telling if the unknown face matched anyone in the known_faces array
+            recognition = "None"
+            """DEBUGGING CODE
+            while True:
+                num = input("choose an image to compare to:\n0 = tuukka, 1 = samson, 2 = jaber, 'q' to quit\n")
+                if num == "q":
+                    return None
+                else:
+                    try:
+                        num = int(num)
+                    except Exception:
+                        print("Invalid command,please input a number to continue or 'q' to quit.")
+                        continue
+                results = face_recognition.compare_faces(self.__known_faces[num], unknown_encoding)
+                print(("comparison result, {}").format(results))
+            DEBUGGING CODE ENDS"""
+            count = 0
+            for count in range(0,3):
+                results = face_recognition.compare_faces(self.__known_faces[count], unknown_encoding)
+                if results[0] == True:
+                    #recognition = self.__known_faces.index(face_encoding)
+                    #print(("face recognised at index '{}', real index should be {}").format(recognition, count))
+                    recognition = count
+                count += 1
+            
+            print("Is the unknown face a picture of Tuukka {}".format(recognition == 0))
+            print("Is the unknown face a picture of Samson? {}".format(recognition == 1))
+            print("Is the unknown face a picture of Jaber? {}".format(recognition == 2))
+            print("Is the unknown face a new person that we've never seen before? {}".format(recognition  == 'None'))
+            if recognition == 0:
+                return "Tuukka"
+            elif recognition == 1:
+                return "Samson"
+            elif recognition == 2:
+                return "Jaber"
+            #TO-DO: Add Arttu
             else:
-                try:
-                    num = int(num)
-                except Exception:
-                    print("Invalid command,please input a number to continue or 'q' to quit.")
-                    continue
-            results = face_recognition.compare_faces(self.__known_faces[num], unknown_encoding)
-            print(("comparison result, {}").format(results))
-        DEBUGGING CODE ENDS"""
-        count = 0
-        for count in range(0,3):
-            results = face_recognition.compare_faces(self.__known_faces[count], unknown_encoding)
-            if results[0] == True:
-                #recognition = self.__known_faces.index(face_encoding)
-                #print(("face recognised at index '{}', real index should be {}").format(recognition, count))
-                recognition = count
-            count += 1
-        
-        print("Is the unknown face a picture of Tuukka {}".format(recognition == 0))
-        print("Is the unknown face a picture of Samson? {}".format(recognition == 1))
-        print("Is the unknown face a picture of Jaber? {}".format(recognition == 2))
-        print("Is the unknown face a new person that we've never seen before? {}".format(recognition  == 'None'))
-        if recognition == 0:
-            return "Tuukka"
-        elif recognition == 1:
-            return "Samson"
-        elif recognition == 2:
-            return "Jaber"
-        #TO-DO: Add Arttu
-        else:
-            return None
+                return None
+            
+        except Exception:
+            print("error in face recognition, exiting...")
+            return "error"
         
     def save_img(self):
         from PIL import Image
@@ -127,6 +134,6 @@ class facerec :
         self.__capture = numpy.empty((240, 320, 3), dtype=numpy.uint8)
         img.save(imgpath)
         
-#if __name__ == "__main__":
+#if __name__ == "__main__"
 #    p = cl_facerec("./", "./unknown/")
 #    p.compare()

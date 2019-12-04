@@ -71,7 +71,7 @@ def readEmail(key):
         if email_subject==str(key):
             print('Authentication confirmed')
             return True
-        elif counter > 20:
+        elif counter > 9:
             print('Authentication failed')
             print(counter)
             return False

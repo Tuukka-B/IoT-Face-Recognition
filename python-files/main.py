@@ -9,11 +9,12 @@ Created on Thu Nov 14 18:32:12 2019
 
 import auth
 import json
-import esp32client
+#import esp32client
 import time
+import grove
 #import sys
 import cl_facerec
-
+from _thread import *
 if __name__ == '__main__':
     jsonloc = "./../files/db.json"
     known_img_dir = "./"
@@ -26,6 +27,7 @@ if __name__ == '__main__':
         data = jsonfile.read()
         jsondata = json.loads(data)
     while True:
+
         # mainloop, waits to recognise a face
         #######################################################################
         
@@ -39,11 +41,17 @@ if __name__ == '__main__':
             count+=1
         else:
             count = 0
-        if count > 2:
-            # PLAY THE ALARM!!! WE HAVE AN INTRUDER
-            # we could even do an alarm function with emails and stuff that
-            # has to be deactivated manually by code....
-            pass
+            
+        """grove buzzer test"""
+        if count > 2 or recognised is None:
+            p.save_img()
+            start_new_thread(grove.buzzer, ())
+            time.sleep(10)
+            exit_thread()
+        # PLAY THE ALARM!!! WE HAVE AN INTRUDER
+        # we could even do an alarm function with emails and stuff that
+        # has to be deactivated manually by code....
+        pass
         
         # auth loop, does the authentication
         #######################################################################
@@ -80,17 +88,17 @@ if __name__ == '__main__':
             old = None
             # TO-DO: TTS voice greeting
         
-        
+            print("ESP is commented out from code")
             # IoT commands to ESP32
             ###################################################################
 
 
-	    print("sending command to ESP32 to light the led...")
+	    #print("sending command to ESP32 to light the led...")
 
-            esp32client.sendData('1')
-            time.sleep(5)
-	    print("Powering off the led...")
-            esp32client.sendData('0')
+            #esp32client.sendData('1')
+            #time.sleep(5)
+	    #print("Powering off the led...")
+            #esp32client.sendData('0')
             
             #after IoT commands, let's go back to the mainloop
             break

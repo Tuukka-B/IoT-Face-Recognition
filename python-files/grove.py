@@ -69,10 +69,11 @@ def buzzer():
             
         # Could make a thread / queue for the buzzer so it does not 
         # interrupt other functions
-
+"""
 if __name__ == '__main__':
     choice = input("choose a function/n'1': button/n'2': buzzer")
     if choice == '1':
         button()
     if choice == '2':
         buzzer()
+"""
