@@ -13,6 +13,7 @@ import esp32client
 import time
 #import sys
 import cl_facerec
+
 if __name__ == '__main__':
     jsonloc = "./../files/db.json"
     known_img_dir = "./"
@@ -59,8 +60,10 @@ if __name__ == '__main__':
                 print(("User named '{}' was not found from the database!\nExiting authentication").format(recognised))
                 break
             avain = auth.key()
+            print("Key created. Sending email!")
             auth.sendEmail(email, avain)
-            input("email: >")
+            #input("email: >")
+            print("Email sent. Reading email! wait!")
             au = auth.readEmail(avain)
             if au == False:
                 count+=1
@@ -78,6 +81,8 @@ if __name__ == '__main__':
         
             # IoT commands to ESP32
             ###################################################################
+            
+            
             esp32client.sendData('1')
             time.sleep(5)
             esp32client.sendData('0')
