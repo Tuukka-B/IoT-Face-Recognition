@@ -9,7 +9,7 @@ Created on Thu Nov 14 18:32:12 2019
 
 import auth
 import json
-#import esp32client
+import esp32client
 import time
 import grove
 #import sys
@@ -46,8 +46,8 @@ if __name__ == '__main__':
         if count > 2 or recognised is None:
             p.save_img()
             start_new_thread(grove.buzzer, ())
-            time.sleep(10)
-            exit_thread()
+            time.sleep(2)
+            exit()
         # PLAY THE ALARM!!! WE HAVE AN INTRUDER
         # we could even do an alarm function with emails and stuff that
         # has to be deactivated manually by code....
@@ -93,12 +93,12 @@ if __name__ == '__main__':
             ###################################################################
 
 
-	    #print("sending command to ESP32 to light the led...")
+            print("sending command to ESP32 to light the led...")
 
-            #esp32client.sendData('1')
-            #time.sleep(5)
-	    #print("Powering off the led...")
-            #esp32client.sendData('0')
+            esp32client.sendData('1')
+            time.sleep(5)
+            print("Powering off the led...")
+            esp32client.sendData('0')
             
             #after IoT commands, let's go back to the mainloop
             break
