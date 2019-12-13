@@ -43,11 +43,11 @@ if __name__ == '__main__':
             count = 0
             
         """grove buzzer test"""
-        if count > 2 or recognised is None:
+        if (count > 2 or recognised is None) and recognised != "error":
             p.save_img()
-            start_new_thread(grove.buzzer, ())
-            time.sleep(2)
-            exit()
+            grove.buzzer()
+            #time.sleep(2)
+            #exit()
         # PLAY THE ALARM!!! WE HAVE AN INTRUDER
         # we could even do an alarm function with emails and stuff that
         # has to be deactivated manually by code....
@@ -88,7 +88,7 @@ if __name__ == '__main__':
             old = None
             # TO-DO: TTS voice greeting
         
-            print("ESP is commented out from code")
+            #print("ESP is commented out from code")
             # IoT commands to ESP32
             ###################################################################
 
