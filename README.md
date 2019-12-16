@@ -24,8 +24,8 @@
 * [Loppuraportti](#loppuraportti)
 * [Sekalaisia alkusuunnitteluideoita](#sekalaisia-alkusuunnitteluideoita)
     * [Työnjako](#työnjako)
-        *[Tulevaisuuden haaveet](#tulevaisuuden-haaveet)
-        *[Tehtävänjako](#tehtävänjako)
+        * [Tulevaisuuden haaveet](#tulevaisuuden-haaveet)
+        * [Tehtävänjako](#tehtävänjako)
     
 
 
