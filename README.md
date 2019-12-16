@@ -192,8 +192,6 @@ Ylläpitää teknologian toimivuutta, päivittää tietokantaa.
 User -> "Program" : Picture
 "Program" -> "FaceRec" : Recognizing
 "FaceRec" -> "Program" : Ok
-"Program" -> "Database" : Getting email
-"Database" -> "Program" : Email
 "Program" -> User : Sending code through email
 User -> "Program" : Anwering
 "Program" - "ESP32" : Ok
