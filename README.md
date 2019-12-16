@@ -191,7 +191,7 @@ Ylläpitää teknologian toimivuutta, päivittää tietokantaa.
 @startuml
 User -> "UI" : Takes picture
 "UI" -> "MainProgram" : FaceRec request
-"MainProgram" -> "Databese" : Email request
+"MainProgram" -> "Database" : Email request
 "Database" -> "MainProgram" : Email
 "MainProgram" -> "UI" : Email confirmed
 "UI" -> User : Authentication Email sent
