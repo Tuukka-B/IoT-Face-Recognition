@@ -194,7 +194,6 @@ User -> "Program" : Picture
 "FaceRec" -> "Program" : Ok
 "Program" -> User : Sending code through email
 User -> "Program" : Anwering
-"Program" - "ESP32" : Ok
 @enduml
 ```
 ## Käyttötapaukset
