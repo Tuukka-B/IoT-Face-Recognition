@@ -189,11 +189,16 @@ Ylläpitää teknologian toimivuutta, päivittää tietokantaa.
 
 ```plantuml
 @startuml
-User -> "Program" : Picture
-"Program" -> "FaceRec" : Recognizing
-"FaceRec" -> "Program" : Ok
-"Program" -> User : Sending code through email
-User -> "Program" : Anwering
+User -> "UI" : Takes picture
+"UI" -> "MainProgram" : FaceRec request
+"MainProgram" -> "Databese" : Email request
+"Database" -> "MainProgram" : Email
+"MainProgram" -> "UI" : Email confirmed
+"UI" -> User : Authentication Email sent
+User -> "UI" : Anwering
+"UI" -> "MainProgram" : Authentication check
+"MainProgram" -> "UI" : User confirmed
+"UI" -> User : Access granted
 @enduml
 ```
 ## Käyttötapaukset
