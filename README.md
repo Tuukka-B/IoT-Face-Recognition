@@ -148,32 +148,15 @@ Ylläpitää teknologian toimivuutta, päivittää tietokantaa.
 
 ```plantuml
 @startuml
-    class User {
-        +userName
-        +userEmail
-        +userImage
-        +__init__()
-    }
-    
-    class 2fa {
-        +knownImage
-        +unknownImage
-        +sendEmail()
+
+    class facerec {
+        -known_faces
+        -timestamp
+        -camera
         +compare()
+        +save_img()
     }
     
-    class IoT {
-        
-    }
-    
-    class Serializer {
-        
-    }
-    
-    class FaceRec {
-        +__init__()
-        +takeImage()
-    }
     
     User --> FaceRec
     FaceRec --> 2fa
