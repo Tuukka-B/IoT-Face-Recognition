@@ -20,18 +20,11 @@
     * [Käsitemalli](#käsitemalli)
     * [Luokkakaavio](#luokkakaavio)
     * [Sekvenssikaavio](#sekvenssikaavio)
-    * [Käyttötapaukset](#kayttotapaukset)
+    * [Käyttötapaukset](#käyttötapaukset)
     * [Työnjako](#työnjako)
     * [Työaikasuunnitelma](#työaika-suunnitelma)
 * [Loppuraportti](#loppuraportti)
-    * [Asennus](#asennus)
-    * [Tetoa ohjelmasta](#tietoa-ohjelmasta)
-    * [Kuvaruutukaappaukset](#kuvaruutukaappaukset)
-    * [Mukana tulevat tiedostot](#mukana-tulevat-tiedostot)
-    * [Tietokanta](#tietokanta)
-    * [Ongelmat, jatkokehitysideat](#ongelmat-jatkokehitysideat)
-    * [Työmäärä](#työmäärä)
-    * [Yhteenveto](#yhteenveto)
+    
 
 
 # Vaatimusmäärittely
@@ -237,18 +230,7 @@ Ohjelma toimii seuraavasti näissä käyttötilanteissa:
 
 # Loppuraportti
 
-## Asenus
-
-## Kuvaruutukaapaukset
-
-## Tietokanta
-
-## Ongelmat, jatkokehitysideat
-
-## Työmäärä
-
-## Yhteenveto
-
+Loppuraporttina aiheestamme toimii tämä gitlab-repositorio ja sen dokumentit. Teimme myös erillisen dokumentin, joka selittää ohjelmamme toiminnan raporttipohjaan kirjoitettuna. Tämän voi ladata [tästä](https://gitlab.labranet.jamk.fi/M3156/iot-face-recognition/blob/master/IOT_RYHM%C3%84TY%C3%96.docx)
 
 * Yleinen selostus
 * Koodi
