@@ -36,6 +36,9 @@
 
 ## Järjestelmän yleiskuvaus
 
+### Johdanto
+
+
 [Linkki projekti-ideaan](https://project.seeedstudio.com/SeeedStudio/face-recognization-smart-lock-with-lte-pi-hat-abcec9)
 
 Suunnitelemamme järjestelmä on Raspberry Pi:n pohjalle kameramoduulin avulla toteutettu kasvojentunnistusjärjestelmä. Tähän järjestelmään on liitettynä ESP32 -moduuli, jonka avulla saamme lisättyä järjestelmään langattomia toiminnallisuuksia. Projekti voi laajentua ja tominnallisuudet lisääntyä, jos näyttää siltä, että tähän on aikaa.
@@ -187,6 +190,21 @@ User -> "FaceRec" : Picture
 
 @enduml
 ```
+## Käyttötapaukset
+
+Ohjelma toimii seuraavasti näissä käyttötilanteissa: 
+
+    Käyttäjä ottaa kuvan, mutta käyttäjää ei tunnisteta: ohjelma alkaa hälyttää summerilla 2 sekuntia 
+
+    Ohjelma ottaa kuvan, käyttäjä tunnistetaan mutta käyttäjä ei lähetä salasanaa tunnistusohjelman hallinnoimaan sähköpostiin: ajan loputtua (n. 2 min) laite laskee epäonnistuneen yrityksen, ei sytytä lediä (joka olisi onnistuneen autentikoinnin merkki), tallentaa kuvan tuntemattomasta käyttäjästä aikaleimoineen ja palaa kasvojentunnistukseen 
+
+    Sama käyttäjä yrittää tunnistautua 3 kertaa mutta epäonnistuu joka kerralla: laite alkaa hälyttää summerilla 2 sekuntia 
+
+    Laite ottaa kuvan, käyttäjä tunnistetaan mutta käyttäjä lähettää väärän salasanan tunnistusohjelman hallinnoimaan sähköpostiin: ohjelma ei tee mitään ennen kuin autentikoinnin aika kuluu umpeen. 
+
+    Laite ottaa kuvan, käyttäjä tunnistetaan, käyttäjä lähettää oikean salasanan autentikointiajan sisällä: laite lähettää verkon kautta komennon ESP32-laitteelle joka sytyttää ledin. 
+
+Autentikointiaika on määritetty auth-moduulissa, kuvan ottaminen ja sen vertaaminen nykyisiin käyttäjiin tapahtuu cl_facerec –moduulissa niin kuin myös kuvan tallentaminen epäonnistuneiden yritysten jälkeen. Jos käyttäjän todentaminen onnistuu, aktivoidaan LED-valo ESP32-laitteessa tekemämme esp32client-moduulin kautta. 
 
 ## Työnjako
 
