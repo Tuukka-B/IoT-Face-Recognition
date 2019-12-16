@@ -21,10 +21,9 @@
     * [Luokkakaavio](#luokkakaavio)
     * [Sekvenssikaavio](#sekvenssikaavio)
     * [Käyttötapaukset](#käyttötapaukset)
-    * [Työnjako](#työnjako)
-    * [Työaikasuunnitelma](#työaika-suunnitelma)
 * [Loppuraportti](#loppuraportti)
 * [Sekalaisia alkusuunnitteluideoita](#sekalaisia-alkusuunnitteluideoita)
+    * [Työnjako](#työnjako)
     
 
 
@@ -196,6 +195,32 @@ Ohjelma toimii seuraavasti näissä käyttötilanteissa:
 
 * Autentikointiaika on määritetty auth-moduulissa, kuvan ottaminen ja sen vertaaminen nykyisiin käyttäjiin tapahtuu cl_facerec –moduulissa niin kuin myös kuvan tallentaminen epäonnistuneiden yritysten jälkeen. Jos käyttäjän todentaminen onnistuu, aktivoidaan LED-valo ESP32-laitteessa tekemämme esp32client-moduulin kautta. 
 
+
+# Loppuraportti
+
+Loppuraporttina aiheestamme toimii tämä gitlab-repositorio ja sen dokumentit. Teimme myös erillisen dokumentin, joka selittää ohjelmamme toiminnan raporttipohjaan kirjoitettuna. Tämän voi ladata [tästä](https://gitlab.labranet.jamk.fi/M3156/iot-face-recognition/blob/master/IOT_RYHM%C3%84TY%C3%96.docx).
+
+
+# Sekalaisia alkusuunnitteluideoita
+
+* Yleinen selostus
+* Koodi
+* Komponentit
+* Vaiheet
+    * Kasvojentunnistus, SMS-kuluvalvonta
+* Extravaiheet
+    * Smart home   
+    * Komponentit: wlan-kytkimiä
+    * kaksivaiheinen tunnistautuminen / sms
+    * kuva ja lupa sovelluksen avulla
+
+Hyödyllinen dokumentaatio (kannattaa tutustua):
+* [Kasvojentunnistus-kirjasto](https://github.com/ageitgey/face_recognition/blob/master/README.md)
+* [Remote shell Micropythonille (ESP32):](https://github.com/dhylands/rshell)
+* [Verkkosivupohjainen remote shell Micropythonille (ESP32):](https://github.com/Hermann-SW/webrepl#webrepl-shell)
+* [Kätevät käyttöohjeet webrepl-shellille](https://forum.micropython.org/viewtopic.php?f=2&p=30829#p30829)
+* [Toinen käyttöohje webreplille](https://docs.micropython.org/en/latest/esp8266/tutorial/repl.html)
+
 ## Työnjako
 
 
@@ -224,32 +249,3 @@ Ohjelma toimii seuraavasti näissä käyttötilanteissa:
 * Tuukka toimii face recognitionin parissa yleisesti
 * Samson saa ESP32:n flashattya/kommunikoimaan Raspberryn kanssa
 * Jaber toimii raspberry pi:n kameran ohjauksen kanssa
-
-## Työaikasuunnitelma
-
-<br><br>
-
-# Loppuraportti
-
-Loppuraporttina aiheestamme toimii tämä gitlab-repositorio ja sen dokumentit. Teimme myös erillisen dokumentin, joka selittää ohjelmamme toiminnan raporttipohjaan kirjoitettuna. Tämän voi ladata [tästä](https://gitlab.labranet.jamk.fi/M3156/iot-face-recognition/blob/master/IOT_RYHM%C3%84TY%C3%96.docx).
-
-
-# Sekalaisia alkusuunnitteluideoita
-
-* Yleinen selostus
-* Koodi
-* Komponentit
-* Vaiheet
-    * Kasvojentunnistus, SMS-kuluvalvonta
-* Extravaiheet
-    * Smart home   
-    * Komponentit: wlan-kytkimiä
-    * kaksivaiheinen tunnistautuminen / sms
-    * kuva ja lupa sovelluksen avulla
-
-Hyödyllinen dokumentaatio (kannattaa tutustua):
-* [Kasvojentunnistus-kirjasto](https://github.com/ageitgey/face_recognition/blob/master/README.md)
-* [Remote shell Micropythonille (ESP32):](https://github.com/dhylands/rshell)
-* [Verkkosivupohjainen remote shell Micropythonille (ESP32):](https://github.com/Hermann-SW/webrepl#webrepl-shell)
-* [Kätevät käyttöohjeet webrepl-shellille](https://forum.micropython.org/viewtopic.php?f=2&p=30829#p30829)
-* [Toinen käyttöohje webreplille](https://docs.micropython.org/en/latest/esp8266/tutorial/repl.html)
