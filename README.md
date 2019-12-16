@@ -158,12 +158,12 @@ Ylläpitää teknologian toimivuutta, päivittää tietokantaa.
     }
     
     
-    User --> FaceRec
-    FaceRec --> 2fa
-    2fa --> User
-    User --> 2fa
-    2fa --> IoT
-    Serializer <|-- User
+    User --> facerec
+    facerec --> auth
+    auth --> User
+    User --> auth
+    auth --> facerec
+    facerec --> esp32client
     
 @enduml
 ```
