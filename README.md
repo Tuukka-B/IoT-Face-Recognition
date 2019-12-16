@@ -231,7 +231,7 @@ Ohjelma toimii seuraavasti näissä käyttötilanteissa:
 
 # Loppuraportti
 
-Loppuraporttina aiheestamme toimii tämä gitlab-repositorio ja sen dokumentit. Teimme myös erillisen dokumentin, joka selittää ohjelmamme toiminnan raporttipohjaan kirjoitettuna. Tämän voi ladata [tästä](https://gitlab.labranet.jamk.fi/M3156/iot-face-recognition/blob/master/IOT_RYHM%C3%84TY%C3%96.docx)
+Loppuraporttina aiheestamme toimii tämä gitlab-repositorio ja sen dokumentit. Teimme myös erillisen dokumentin, joka selittää ohjelmamme toiminnan raporttipohjaan kirjoitettuna. Tämän voi ladata [tästä](https://gitlab.labranet.jamk.fi/M3156/iot-face-recognition/blob/master/IOT_RYHM%C3%84TY%C3%96.docx).
 
 
 # Projektin alkusuunnitteluideoita
