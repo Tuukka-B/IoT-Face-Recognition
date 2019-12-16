@@ -118,7 +118,7 @@ Lisäksi käytämme tunnettuja Linux / Python-kirjastoja ESP32:n ohjaukseen
 
 * Raspberry Pi 3 Model B
 * Raspberry Pi Camera Module
-* [Grove - Relay](https://project.seeedstudio.com/products/grove-relay)
+* GrovePi Board, button ja buzzer
 * ESP32
 
 ## Käyttäjäroolit
