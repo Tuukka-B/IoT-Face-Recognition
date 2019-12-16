@@ -189,10 +189,14 @@ Ylläpitää teknologian toimivuutta, päivittää tietokantaa.
 
 ```plantuml
 @startuml
-User -> "FaceRec" : Picture
-"FaceRec" -> "E-mail": Sending code
-
-
+User -> "Raspi" : Picture
+"Raspi" -> "FaceRec" : Recognizing
+"FaceRec" -> "Raspi" : Ok
+"Raspi" -> "Database" : Getting email
+"Database" -> "Raspi" : Email
+"Raspi" -> User : Sending code through email
+User -> "Raspi" : Anwering
+"Raspi" - "ESP32" : Ok
 @enduml
 ```
 ## Käyttötapaukset
