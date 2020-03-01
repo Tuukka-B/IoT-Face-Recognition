@@ -1,0 +1,20 @@
+{
+	"user": {
+		"Tuukka": {
+			"image": "tuukka.jpg",
+			"email": "tuukka.bordi@hotmail.fi"
+		},
+		"Samson": {
+			"image": "samson.jpg",
+			"email": "samsonitto@gmail.com"
+		},
+		"Jaber": {
+			"image": "jaber.jpg",
+			"email": "rebaj.askari@gmail.com"
+		},
+		"Arttu": {
+		    "image": "arttu.jpg",
+		    "email": "m3350@student.jamk.fi"
+		}
+	}
+}
