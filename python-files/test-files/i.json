@@ -1,0 +1,7 @@
+{
+  "user": [
+    {"name":"Samson","email":"samsonitto@gmail.com","image":"samson.jpg"},
+    {"name":"Jaber","email":"rebaj.askari@gmail.com","image":"jaber.jpg"},
+    {"name":"Tuukka","email":"tuukka.bordi@hotmail.fi","image":"tuukka.jpg"}
+  ]
+}
