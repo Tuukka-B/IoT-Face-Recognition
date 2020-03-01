@@ -1,0 +1,9 @@
+git add .
+git commit -m "commit-message"
+git push https://gitlab.labranet.jamk.fi/M3156/iot-face-recognition.git
+pulling:
+git pull https://gitlab.labranet.jamk.fi/M3156/iot-face-recognition.git
+ALWAYS PULL FIRST
+
+for OpenCV problems:
+https://life2coding.com/install-opencv-3-4-0-python-3-raspberry-pi-3
